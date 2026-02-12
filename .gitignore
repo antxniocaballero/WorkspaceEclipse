@@ -1,0 +1,25 @@
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+
+#Aqui van las carpetas donde se guarda el código compilado 
+bin/
+target/
+build/
+
+#Esto son los archivos temporales del sistema
+.DS_Store
+Thumbs.db/.metadata/
+
+# Workspace de Eclipse - Antonio José Caballero
+Este repositorio contiene mis proyectos de Java en 1ºDAM.
+
+## Estructura
+- **src/**: Código fuente de los proyectos de eclipse
+- **assets/files**: Recursos para ficheros o html
+
+## Requisitos para que funcione
+- Eclipse IDE
+- Java JDK 17 o superior
