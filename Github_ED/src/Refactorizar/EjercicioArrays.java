@@ -34,8 +34,7 @@ public class EjercicioArrays {
             }
         }
 
-        //creamos una lista de los alumnos de la clase
-        listaClase = new int[numAlumnos];
+		listaClase = new int[numAlumnos];
         for (int i = 0; i < numAlumnos; i++){
             listaClase[i] = i+1;
         }
@@ -45,28 +44,25 @@ public class EjercicioArrays {
         indMaxNota = notas.indexOf(maxNota) + 1;
 
         //Comprobamos el resultado del ejercicio   
-        System.out.println("Mínimo es: " + minNota);
-        System.out.println("Máximo es: " + maxNota);
-        System.out.println("Indice del mínimo es : " + indMinNota);
-        System.out.println("Indice del máximo es : " + indMaxNota);
+        System.out.println("Mínimo: " + minNota + "\nMaximo: " + maxNota);
+        System.out.println("Indice del mínimo: " + indMinNota + "\nIndice del máximo: " + indMaxNota);
         System.out.println("Lista de clase :" + Arrays.toString(listaClase));
         System.out.println("Array de Notas :" + notas);
         
         //creamos el array de notas "practicas"
         practicas = new int[numAlumnos];
+        calificaciones = new float[numAlumnos];
         for(int i=0; i < practicas.length; i++){
             practicas[i] = (int)(Math.random()*11);
         }
-        //Creamos el vector calificaciones
-        calificaciones = new float[numAlumnos];
         for(int i = 0; i<control.length; i++){
             calificaciones[i] = 
                     (((float) control[i] 
                     + (float) practicas[i]) 
                     / 2);
         }
-        System.out.println("Prácticas      :" + Arrays.toString(practicas));
-        System.out.println("Calificaciones :" + Arrays.toString(calificaciones));
+        System.out.println("Prácticas: " + Arrays.toString(practicas) + "Calificaciones: " + Arrays.toString(calificaciones));
+
         
         //Sacamos la estadística de calificaciones
         //hacemos un array de 10 para la estadística.
