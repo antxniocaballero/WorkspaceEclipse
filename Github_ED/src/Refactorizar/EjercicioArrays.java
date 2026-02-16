@@ -87,46 +87,33 @@ public class EjercicioArrays {
         //Aprobados y suspensos
         aprobados = new int[numAlumnos];
         suspensos = new int[numAlumnos];
-        int countAprobados = 0;
-        int countSuspensos = 0;
-        for (int i=0; i<numAlumnos; i++){
-            if (calificaciones[i] < 5){
-                aprobados[i] = i;
-                countAprobados += 1;
-            }else{ 
-                suspensos[i] = i;
-                countSuspensos += 1;
-            }
-        }        
-        System.out.println("Relación de aprobados por nº de lista: " 
-                + Arrays.toString(aprobados));
-        System.out.println("Relación de suspensos por nº de lista: " 
-                + Arrays.toString(suspensos));
-        //Resumen de aprobados y suspensos
-        int i = 0;
+
+        int[] a = new int[numAlumnos];
+        int[] s = new int[numAlumnos];
+
         int x = 0;
-        int[] a = new int[countAprobados];
-        int[] s = new int[countSuspensos];
-        while(i < aprobados.length){
-            if(aprobados[i] != 0){
-                a[x] = aprobados[i];
-                i++;
-                x++;
-            }else{ i++; }
+        int y = 0;
+
+        for (int i = 0; i < numAlumnos; i++) {
+            if (calificaciones[i] < 5) {
+                aprobados[i] = i;
+                if (i != 0) { 
+                	a[x] = i; 
+                	x++; 
+                } 
+            } else {
+                suspensos[i] = i;
+                if (i != 0) { 
+                	s[y] = i; 
+                	y++; 
+                }
+            }
         }
-        
-        i = x = 0;
-        while(i < suspensos.length){
-            if(suspensos[i] != 0){
-                s[x] = suspensos[i];
-                i++;
-                x++;
-            }else{ i++; }
-        }
-        System.out.println("Resumen  de aprobados por nº de lista: " 
-                + Arrays.toString(a));
-        System.out.println("Resumen  de aprobados por nº de lista: " 
-                + Arrays.toString(s));
+        System.out.println("Relación de aprobados: " + Arrays.toString(aprobados));
+        System.out.println("Relación de suspensos: " + Arrays.toString(suspensos));
+        System.out.println("Resumen de aprobados: " + Arrays.toString(Arrays.copyOf(a, x)));
+        System.out.println("Resumen de suspensos: " + Arrays.toString(Arrays.copyOf(s, y)));
+
     
         /*6. Suponer un vector de Calificaciones de tamaño 40 
         (máximo de alumnos por clase), pero que solo almacena las
