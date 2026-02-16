@@ -63,28 +63,27 @@ public class EjercicioArrays {
         }
         System.out.println("Prácticas: " + Arrays.toString(practicas) + "Calificaciones: " + Arrays.toString(calificaciones));
 
-        
         //Sacamos la estadística de calificaciones
         //hacemos un array de 10 para la estadística.
         estadistica = new float[10];
-      
-        for (int i=0; i<10; i++){
-            float count = 0;
-            float sum = 0;
-            for (int j=0; j<control.length; j++){
-                if ((i < calificaciones[j]) && ((i+1) >= calificaciones[j] )) {
-                    sum += calificaciones[j];
-                    count += 1;
-                }
+        
+        for (int i=0; i<calificaciones.length; i++){
+            int count = (int) calificaciones[i];
+            if(count >= 10) {
+            	count = 9;
+            } else if(count < 0) {
+            	count = 0;
             }
-            if (count != 0){
-                estadistica[i] = ( (float)count / numAlumnos);
-            }else{ estadistica[i] = 0;}
-            double sol = (Math.round(estadistica[i] * 10000.0)) / 100.0;
-            System.out.println("Estadística nota tramo <=" 
-                + (i+1) + " = " 
-                + sol + "%");
+            estadistica[count]++;
         }
+        for(int i = 0; i < 10; i++) {
+        	float porcentaje = (estadistica[i] / numAlumnos) *100;
+        	double sol = (Math.round(porcentaje*100))/100;
+        	System.out.println("Estadística nota tramo <=" 
+                    + (i+1) + " = " 
+                    + sol + "%");
+        }
+
         //Aprobados y suspensos
         aprobados = new int[numAlumnos];
         suspensos = new int[numAlumnos];
